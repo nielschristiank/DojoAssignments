@@ -1,0 +1,139 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+p, a{
+  margin: 10px 15px;
+}
+
+.box_grad {
+//  background-color: silver;
+  width: auto;
+  padding: 10px;
+  background: #aaa9af;
+  background: -webkit-linear-gradient(#aaa9af, #878593, #aaa9af); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#aaa9af, #878593, #aaa9af); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#aaa9af, #878593, #aaa9af); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#aaa9af, #878593, #aaa9af); /* Standard syntax */
+}
+
+div.box_grad  h2{
+  color: white;
+}
+
+div.column_2 {
+  display: inline-block;
+  width: 560px;
+  height: 375px;
+  margin: 30px 15px 10px 15px;
+  //padding: 0 10px 10px 10px;
+  background-color: white;
+  vertical-align: top;
+}
+
+div.column_2 img{
+  border: 5px solid silver;
+  width: 550px;
+  height: 365px;
+}
+
+div.column_2 a, p{
+  color: black;
+  font-size: 20px;
+}
+
+div.column_3 {
+  display: inline-block;
+  width: 362px;
+  height: 730px;
+  margin: 30px 15px 10px 15px;
+  background-color: white;
+//  border: 2px solid black;
+}
+
+div.column_3 img {
+  width: 362px;
+}
+
+div.icons {
+  padding: 20px;
+}
+
+div.icons img {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 7px;
+}
+
+div.social_icons {
+  width: 40%;
+  margin: 0 auto;
+}
+
+#footer p{
+  text-align: center;
+}
+
+div.social_icons a{
+  color: black;
+  font-size: 18px;
+}
+
+div.social_icons img {
+  display: inline;
+  width: 20px;
+  height: 20px;
+}
+
+#wrapper {
+  //background-color: #57434c;
+  background: #37252c;
+  background: -webkit-linear-gradient(left, #37252c, #6f5964, #37252c); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #37252c, #6f5964, #37252c); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #37252c, #6f5964, #37252c); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #37252c, #6f5964, #37252c); /* Standard syntax */
+  width: 1200px;
+  padding: 0 15px 15px 15px;
+}
+
+#main_content {
+}
+
+#header {
+  background-color: white;
+  padding: 0 15px 0 15px;
+  width: 1200px;
+}
+#header h1 {
+  text-align: left;
+  margin: 10px 10px 10px 20px;
+}
+#header h2{
+  text-align: right;
+  margin: 10px 20px 10px 10px;
+  float: right;
+}
+#header h1, h2 {
+  display:inline-block;
+  vertical-align: middle;
+}
+
+#footer {
+  background-color: white;
+  padding: 0 15px 0 15px;
+
+  width: 1200px;
+}
+
+button {
+  background-color: #407d61;
+  color: white;
+  margin: 0 auto;
+  padding: 10px;
+  display: block;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
