@@ -1,0 +1,282 @@
+
+/***RESETS****/
+*{
+  margin: 0
+  padding: 0;
+}
+/***************/
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+#wrapper {
+  width: 970px;
+  padding: 10px;
+}
+
+#header {
+  background: #f6f6f6; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#f6f6f6, #dfdfdf); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#f6f6f6, #dfdfdf); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#f6f6f6, #dfdfdf); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#f6f6f6, #dfdfdf); /* Standard syntax */
+  box-shadow: 1px 1px 1px #a8b9c0;
+  border-radius: 5px;
+  width: 970px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+#header img {
+  height: 60px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#header a{
+  font-weight:800;
+  margin-top: 20px;
+  color: black;
+  position: relative;
+  top: 20px;
+}
+
+#top_nav_search {
+  display:inline-block;
+  vertical-align: top;
+  height:60px;
+  width: 250px;
+  margin-left: 100px;
+}
+
+#top_nav_search > div{
+  position: relative;
+  top: 8px;
+  border-radius: 10px;
+}
+
+#top_nav_search img {
+  display:inline-block;
+  height:30px;
+  position: relative;
+  top: 10px;
+  right: 25px;
+}
+
+#top_nav_search input[type=text]{
+  border-radius: 15px;
+  height: 25px;
+  width: 200px;
+}
+
+.top_nav {
+  display:inline-block;
+  vertical-align: top;
+  text-align: center;
+  height:60px;
+  width: 100px;
+  border-right: 1px solid #dfdfdf;
+}
+
+#top_content {
+  width: 970px;
+}
+
+#top_content img {
+  width: 970px;
+}
+
+#top_content p, a {
+  display: inline;
+}
+
+#lower_nav {
+  background-color: #444444;
+  height: 40px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+  bottom: 5px;
+}
+
+#lower_nav > a , #lower_nav > p {
+  margin-left: 20px;
+  font-size: 12px;
+  position: relative;
+  top: 10px;
+}
+
+#lower_nav a {
+  color: lightblue;
+}
+
+#lower_nav a:hover {
+  color: white;
+}
+
+#lower_nav p {
+  color: #a8b9c0;
+}
+
+#browse_store {
+  width: 910px;
+  margin: 30px auto;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+#browse_store > h1, #browse_store > button {
+  display:inline-block;
+}
+
+#browse_store > h1 {
+  color: #adadad;
+  font-weight: 300;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#browse_store > button {
+  background: #5794c1;
+  background: -webkit-linear-gradient(#5794c1, #44799b); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#5794c1, #44799b); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#5794c1, #44799b); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#5794c1, #44799b); /* Standard syntax */
+  box-shadow: 2px 2px 2px #a8b9c0;
+  color: white;
+  font-size: 20px;
+  padding: 12px 20px 12px 40px;
+  border: 0;
+  border-radius: 5px;
+  position: relative;
+  bottom: 1.5px;
+  left: 80px;
+}
+
+#browse_store > button > span {
+  display: inline;
+  margin-left: 60px;
+}
+
+#bottom_content {
+  width: 910px;
+  margin: 20px auto 0 auto;
+  padding-bottom: 75px;
+  border-bottom: 1px solid #a8b9c0;
+}
+
+#bottom_content p {
+  font-size: 12px;
+}
+
+#bottom_content button {
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+  background: #5eb8f7;
+  background: -webkit-linear-gradient(#5eb8f7, #5ba3d3); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#5eb8f7, #5ba3d3); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#5eb8f7, #5ba3d3); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#5eb8f7, #5ba3d3); /* Standard syntax */
+  box-shadow: 2px 2px 2px #a8b9c0;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+div.col_4 > img {
+  width: 100%;
+}
+
+div.col_4 {
+  display: inline-block;
+  vertical-align: top;
+  width: 202px;
+  height: 300px;
+  padding: 10px;
+}
+
+div.col_4 > div {
+  margin-bottom: 30px;
+}
+
+div.col_4  h4, div.col_4  img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.col_4 h4 {
+  margin: 0;
+  position: relative;
+  font-size: 15px;
+  top: 8px;
+  left: 3px;
+}
+div.col_4 > div > img {
+  height: 30px;
+}
+
+#footer {
+  width: 970px;
+  margin-top: 60px;
+}
+
+#footer a {
+  color: black;
+}
+
+#footer li {
+  margin-bottom: 10px;
+}
+
+#footer li.list_heading {
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+#footer > ul {
+  display:inline-block;
+  list-style-type: none;
+  font-size: 11px;
+  vertical-align: top;
+}
+
+#video_preview {
+
+}
+
+#tour {
+  position: relative;
+  top: 21px;
+}
+
+#trial {
+  position: relative;
+  top: 11px;
+}
+
+#products {
+  position: relative;
+  top: 22px;
+}
+
+#contact_info {
+  width: 970px;
+  font-size: 10px;
+  margin-top: 50px;
+}
+
+#contact_info p {
+    margin-left: 40px
+}
+
+#contact_info a{
+  color: #5ba3d3;
+}
