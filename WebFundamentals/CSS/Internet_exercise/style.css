@@ -1,222 +1,256 @@
-*{
-  margin: 0;
-  padding: 0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 
-p, h1, h2, h3, h4{
+p,
+h1,
+h2,
+h3,
+h4 {
     margin-bottom: 10px;
 }
 
 a {
-  text-decoration: none;
-  color: #0cc2de;
+    text-decoration: none;
+    color: #0cc2de;
 }
 
-ul, ol {
+ul,
+ol {
     margin-left: 50px;
- }
+}
+
 #wrapper {
-  width: 1200px;
+    width: 1200px;
 }
 
-#header {
-
-}
+#header {}
 
 #header .header_top {
-  height: 150px;
+    height: 150px;
+    position: relative;
 }
+
 #header img {
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-  vertical-align: top;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
+/*
+    position: relative;
+    top: 20px;
+*/
 }
 
 #header h1 {
-  display: inline-block;
-  font-size: 60px;
-  font-weight: 400;
-  color: #575757;
-  margin: 20px 0 0 0;
+    display: inline-block;
+    font-size: 60px;
+    font-weight: 400;
+    color: #575757;
+    margin: 20px 0 0 0;
 }
 
 #header h2 {
-  font-size: 38px;
-  font-weight: 400;
-  color: white;
-  padding: 12px 0 12px 20px;
-  margin-top: -65px;
+    font-size: 38px;
+    font-weight: 400;
+    color: white;
+    padding: 12px 0 12px 20px;
+    margin-top: -65px ;
 }
 
 #header .header_bottom {
-  display: block;
-  background: #4f80a9; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#29689d, #4f80a9, #29689d); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#29689d, #4f80a9, #29689d); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#29689d, #4f80a9, #29689d); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#29689d, #4f80a9, #29689d); /* Standard syntax */
+    display: block;
+    background: #4f80a9;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#29689d, #4f80a9, #29689d);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#29689d, #4f80a9, #29689d);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#29689d, #4f80a9, #29689d);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#29689d, #4f80a9, #29689d);
+    /* Standard syntax */
 }
 
 #sidebar {
-  display: inline-block;
-  width: 20%;
-  vertical-align: top;
-  margin: 30px 40px 0 10px;
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    margin: 30px 40px 0 10px;
 }
 
 #sidebar_top {
-  padding: 0 0 40px 0;
-  border-bottom: 2px solid silver;
+    padding: 0 0 40px 0;
+    border-bottom: 2px solid silver;
 }
 
 #sidebar_bottom {
-  background-image: url("imgs/ad_background.png");
-  margin: 40px 0 0 0;
-  padding: 30px 5px 30px 5px;
-  text-align: center;
+    background-image: url("imgs/ad_background.png");
+    margin: 40px 0 0 0;
+    padding: 30px 5px 30px 5px;
+    text-align: center;
 }
+
 #sidebar_top h4 {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 #sidebar_bottom h3 {
-  font-size: 30px;
-  font-weight: 400;
-  color: white;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
 }
 
 #sidebar_bottom img {
-  width: 125px;
+    width: 125px;
 }
 
 #sidebar button {
-  display: block;
+    display: block;
 }
 
 #sidebar_top button {
-  width: 100%;
-  margin: 5px 0 5px 0;
-  padding: 10px 5px 10px 5px;
-  font-size: 18px;
-  color: white;
-  border: 0;
-  box-shadow: 2px 2px 2px grey;
-  border-radius: 5px;
+    width: 100%;
+    margin: 5px 0 5px 0;
+    padding: 10px 5px 10px 5px;
+    font-size: 18px;
+    color: white;
+    border: 0;
+    box-shadow: 2px 2px 2px grey;
+    border-radius: 5px;
 }
 
 .blue_button {
-  background: #82accd; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#82accd, #2b6a9f); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#82accd, #2b6a9f); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#82accd, #2b6a9f); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#82accd, #2b6a9f); /* Standard syntax */
-  #5f94be, #2b6a9f
+    background: #82accd;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#82accd, #2b6a9f);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#82accd, #2b6a9f);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#82accd, #2b6a9f);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#82accd, #2b6a9f);
+    /* Standard syntax */
+    #5f94be,
+    #2b6a9f
 }
 
 .yellow_button {
-  background: #e9a856; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#e9a856, #ee7606); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#e9a856, #ee7606); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#e9a856, #ee7606); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#e9a856, #ee7606); /* Standard syntax */
+    background: #e9a856;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#e9a856, #ee7606);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#e9a856, #ee7606);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#e9a856, #ee7606);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#e9a856, #ee7606);
+    /* Standard syntax */
 }
 
 .light_blue_button {
-  background: #6dbfd1; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#6dbfd1, #12c2dd); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#6dbfd1, #12c2dd); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#6dbfd1, #12c2dd); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#6dbfd1, #12c2dd); /* Standard syntax */
+    background: #6dbfd1;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#6dbfd1, #12c2dd);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#6dbfd1, #12c2dd);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#6dbfd1, #12c2dd);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#6dbfd1, #12c2dd);
+    /* Standard syntax */
 }
 
 #sidebar_bottom button {
-  width: 85%;
-  margin: 10px auto;
-  padding: 5px 15px 5px 15px;
-  font-size: 18px;
-  color: white;
-  border: 0;
-  box-shadow: 2px 2px 2px grey;
-  border-radius: 5px;
+    width: 85%;
+    margin: 10px auto;
+    padding: 5px 15px 5px 15px;
+    font-size: 18px;
+    color: white;
+    border: 0;
+    box-shadow: 2px 2px 2px grey;
+    border-radius: 5px;
 }
 
 #main_content {
-  display: inline-block;
-  width: 75%;
-  vertical-align: top;
+    display: inline-block;
+    width: 75%;
+    vertical-align: top;
 }
 
 #main_top {
-  border-bottom: 2px solid silver;
-  padding-bottom: 10px;
+    border-bottom: 2px solid silver;
+    padding-bottom: 10px;
 }
 
-#DNS, #contact {
-  display: inline-block;
-  vertical-align: top;
+#DNS,
+#contact {
+    display: inline-block;
+    vertical-align: top;
 }
 
 #main_top img {
-  width: 50px;
-  height: 50px;
+    width: 50px;
+    height: 50px;
 }
 
 #main_top #DNS img {
-  width: 20px;
-  height: 20px;
-  margin: auto auto;
+    width: 20px;
+    height: 20px;
+    margin: auto auto;
 }
 
 #main_top h1 {
-  margin: 0;
-  color: #0cc2de;
+    margin: 0;
+    color: #0cc2de;
 }
 
 #contact {
-  text-align: center;
-  margin-left: 575px;
+    text-align: center;
+    margin-left: 575px;
 }
 
 #main_content h2 {
-  margin-top: 10px;
-  color: #2d6b9f;
+    margin-top: 10px;
+    color: #2d6b9f;
 }
 
-#main_content img.client_server{
-  width: 40%;
-  margin: 10px 0 10px 25%;
+#main_content img.client_server {
+    width: 40%;
+    margin: 10px 0 10px 25%;
 }
 
 #footer {
-  border: 6px solid #0087dd;
-  margin-top: 20px;
-  padding: 10px;
+    border: 6px solid #0087dd;
+    margin-top: 20px;
+    padding: 10px;
 }
 
 #footer img {
-  display:inline-block;
-  width:20%;
+    display: inline-block;
+    width: 20%;
 }
 
-#footer div{
-  width: 75%;
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 20px;
+#footer div {
+    width: 75%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
 }
+
 .inline-block {
-  display: inline-block;
+    display: inline-block;
 }
 
 .blue {
-  color: #2d6b9f;
+    color: #2d6b9f;
 }
 
 .red {
-  color: red;
+    color: red;
 }
