@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="javascript.js"></script>
+    <title>Users</title>
+  </head>
+  <body>
+
+    <table id="contact_info_table">
+      <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+        <th>Contact #</th>
+      </thead>
+    </table>
+
+    <div id="form_container">
+
+      <h1>Add User</h1>
+      <form id="form_addUser" action="index.html" method="post">
+        <ul>
+            <li>First Name: <input id="first_name" type="text" name="first_name" placeholder="Enter First Name"></li>
+            <li>Last Name: <input id="last_name"type="text" name="last_name" placeholder="Enter Last Name"></li>
+            <li>Email Address: <input id="email_address" type="text" name="email_address" placeholder="Enter Email Address"></li>
+            <li>Contact #: <input id="contact_number" type="text" name="contact_number" placeholder="Enter Contact Number"></li>
+            <li><input type="submit" value="Add User"></li>
+        </ul>
+      </form>
+
+  </div>
+
+  </body>
+</html>

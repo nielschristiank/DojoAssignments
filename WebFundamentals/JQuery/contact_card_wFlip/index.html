@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script type="text/javascript" src="javascript.js"></script>
+    <title>Contact Card</title>
+  </head>
+  <body>
+
+    <div id="wrapper">
+
+      <div id="form_container">
+        <form id="form_addUser">
+            <div><label>First Name: </label><input id="first_name" type="text" name="first_name" placeholder="Enter first name..."></div>
+            <div><label>Last Name: </label><input id="last_name" type="text" name="last_name" placeholder="Enter last name..."></div>
+            <label>Description: </label>
+            <textarea id="description" type="textarea" name="description" placeholder="Enter description..."></textarea>
+            <input type="submit" value="Add User">
+        </form>
+      </div>
+
+      <div id="contact_container">
+        <div class="card">
+          <div class="front contact">
+            <h1>Name Name</h1>
+            <p>Click for description</p>
+            <p class='hidden'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.
+            </p>
+          </div>
+          <div class="back contact hidden">
+            <p>
+              aboris nisi ut aliquip ex ea commodo consequat. Duis aute iruraboris nisi ut aliquip ex ea commodo consequat. Duis aute irur
+              aboris nisi ut aliquip ex ea commodo consequat. Duis aute iruraboris nisi ut aliquip ex ea commodo consequat. Duis aute irur
+            </p>
+          </div>
+        </div>
+          <div class="card">
+            <div class="front contact">
+              <h1>Name3 Name3</h1>
+              <p>Click for description</p>
+              <p class='hidden'>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.
+              </p>
+            </div>
+            <div class="back contact hidden">
+              <p>
+                aboris nisi ut aliquip ex ea commodo consequat. Duis aute iruraboris nisi ut aliquip ex ea commodo consequat. Duis aute irur
+                aboris nisi ut aliquip ex ea commodo consequat. Duis aute iruraboris nisi ut aliquip ex ea commodo consequat. Duis aute irur
+              </p>
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
