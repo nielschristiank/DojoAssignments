@@ -1,0 +1,81 @@
+/**{
+  margin:0;
+  padding:0;
+}*/
+
+#wrapper {
+  width: 100%;
+  padding: 20px;
+}
+
+#header {
+  background-color: grey;
+  width:100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.arrow{
+  text-decoration: none;
+  font-size: 50px;
+  color: black;
+  margin-left: 20px;
+}
+
+#main_content div {
+  width: 75%;
+  margin: 0 auto;
+}
+
+#main_content h1, #main_content p{
+  text-align: center;
+}
+
+span {
+  font-size: 20px;
+}
+
+nav {
+}
+
+button {
+  width: 25%;
+  background-color: grey;
+  color: white;
+  font-size: 15px;
+}
+
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+.increase_font_size {
+  font-size: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+a:hover{
+  color: white;
+}
+
+.font_family_change {
+  font-family: cursive;
+}
+
+img {
+  display: block;
+  width:30%;
+  margin: 0 auto;
+}
+
+input {
+  display: block;
+  margin: 30px auto;
+}

@@ -1,4 +1,4 @@
-function lottery(coins, limit, winAmount){
+function lottery(coins){
 
   var win = Math.floor(Math.random() * 100) + 1;
 
