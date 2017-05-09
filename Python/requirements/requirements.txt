@@ -1,0 +1,20 @@
+pip install Django
+- installs Django
+
+pip list
+-show list of installed libraries
+
+pip install Django
+-outputs that Django is already installed
+
+pip freeze
+- outputs list of installed libraries in different format
+
+pip uninstall Django
+- uninstalls Django if installed
+
+pip show Django
+- shows nothing if uninstalled, shows version and info if installed
+
+pip search Flask
+- shows a detailed list of everything in Flask
