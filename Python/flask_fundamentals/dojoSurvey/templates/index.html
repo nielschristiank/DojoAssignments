@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Dojo Survey</title>
+  </head>
+  <body>
+    <h1>Welcome to the Form Page!</h1>
+    <form action="/result" method="post">
+      Enter Your Name: <input type="text" name="name"> <br>
+      Favorite DC Superhero:
+      <select name="favDCHero">
+        <option value="Batman">Batman</option>
+        <option value="Definitely Batman">Definitely Batman</option>
+        <option value="It can only be Batman!">It can only be Batman!</option>
+      </select> <br>
+      Favorite Marvel Superhero:
+      <select name="favMarvelHero">
+        <option value="Spider-Man">Spider-Man</option>
+        <option value="Iron Man">Iron Man</option>
+        <option value="Captain America">Captain America</option>
+      </select><br>
+      Comment: (optional) <br>
+      <textarea name="comment" rows="8" cols="80" placeholder="Enter Comment"></textarea><br>
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>
