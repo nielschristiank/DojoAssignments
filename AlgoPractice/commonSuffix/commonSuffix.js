@@ -4,7 +4,7 @@ function commonSuffix(arr)
 {
   var newArr = [];
   var result = "";
-  for (var i = 1; i < arr[0].length; i++)
+  for (var i = 1; i < arr[0].length + 1; i++)
   {
     for (var j = 1; j < arr.length; j++)
     {

@@ -1,0 +1,13 @@
+h1 {
+  color:blue;
+}
+
+#wrapper {
+  text-align: center;
+  width: 100%;
+}
+#form_container {
+  text-align: left;
+  width: 500px;
+  margin: 20px auto;
+}

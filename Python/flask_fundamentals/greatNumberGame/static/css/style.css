@@ -1,0 +1,36 @@
+.hide {
+  display: none;
+}
+
+/*.red {
+  color:red;
+}
+.green {
+  color: green;
+}*/
+.white{
+  color:white;
+}
+div.green{
+  background-color: green;
+}
+div.red{
+  background-color: red;
+}
+div.black{
+  background-color: black;
+}
+
+h1, h2, h3, h4, form,input{
+  text-align: center;
+}
+
+#wrapper{
+  width:100%;
+}
+#win_lose_box
+{
+  padding: 10px;
+  width: 25%;
+  margin: 0 auto 10px auto;
+}

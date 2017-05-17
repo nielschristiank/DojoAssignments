@@ -19,8 +19,9 @@ class dog(animal):
     #     self.name = "Dog"
     #     self.pet_name = pet_name
     #     self.health = 150
-    def __init__(self, name):
-        super(dog, self).__init__(name)
+    def __init__(self, pet_name):
+        self.name = "Dog"
+        self.pet_name = pet_name
         self.health = 150
     def pet(self):
         self.health += 5

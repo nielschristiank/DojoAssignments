@@ -1,0 +1,87 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+h1, h2, h3, h4, p, form{
+  //text-align: center;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+img {
+  width: 200px;
+}
+
+div.building {
+  display: inline-block;
+  vertical-align: top;
+  width: 150px;
+  height: 150px;
+  margin: 5px auto;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+div.building form {
+  margin-top: 75px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+
+.align-right{
+  position: relative;
+  left: 25%;
+}
+#gold_box {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#wrapper{
+  width:100%;
+  text-align: center;
+}
+#header {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#form_container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#activities_container {
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid black;
+  height: 150px;
+}
+#activities_output {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+  height: 150px;
+  text-align: left;
+  overflow: scroll;
+}
+#activities_output > p{
+  margin: 5px;
+}
