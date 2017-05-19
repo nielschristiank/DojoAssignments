@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>POST WALL</title>
+</head>
+<body>
+
+  <header>
+    <h1>WELCOME TO THE WALL!</h1>
+    <h2>Welcome {{session['user']['username']}}</h2>
+    <a href="/">Back</a>
+    <form action="/logout" method="POST"><input type='submit' value="logout"></form>
+  </header>
+  <hr>
+  <div id="container">
+    <form action="/post_message" method="POST">
+      <label for="message">Post a message:<br><textarea type="text" name="message" cols="75" rows="10"></textarea></label><br>
+      <input type="submit" value="Submit Message">
+    </form>
+
+    <hr>
+    {% for message in all_messages %}
+    <div id="message_wrapper">
+      <h4>Posted by: {{message['first_name']}} {{message['last_name']}} : {{message['username']}}</h4>
+      <h5>{{message['created_at'].strftime('%c')}}</h5>
+      <div class="message">
+        <p>{{message['message']}}</p>
+      </div>
+      {% if session['user']['id'] == message['user_id'] %}
+      <form action="/delete_message/{{message['id']}}" method='POST'>
+        <input type="submit" value="delete message">
+      </form>
+      {% endif %}
+      <!-- <details open>
+        <summary>Comments</summary> -->
+        <h5>Comments</h5>
+        <div class="comment">
+        {% for comment in all_comments %}
+        {% if comment['message_id'] == message['id'] %}
+          <p> <strong>{{comment['username']}}</strong> <small>{{comment['created_at'].strftime('%c')}}</small><br>{{comment['comment']}}<p>
+        {% endif %}
+        {% endfor %}
+        <form action="/post_comment/{{message['id']}}" method="POST">
+          <label for="comment">Post a comment:<br><textarea type="text" name="comment" cols="20" rows="2"></textarea></label><br>
+          <input type="submit" value="Submit Comment">
+        </form>
+        </div>
+    <!-- </details> -->
+    </div>
+    {% endfor %}
+  </div>
+
+</body>
+</html>

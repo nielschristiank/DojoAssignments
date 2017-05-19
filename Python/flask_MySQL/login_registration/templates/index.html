@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Register for something!</title>
+</head>
+<body>
+  <h1>Please register for nothing</h1>
+  {% with messages = get_flashed_messages()  %}
+  {% if messages %}
+  {% for message in messages %}
+    <small style="color: red">{{message}}</small><br>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <form action='/create_user' method='POST'>
+    <label for="username">Username: <input type="text" name="username"></label><br>
+    <label for="first_name">First Name:<input type="text" name="first_name"></label><br>
+    <label for="last_name">Last Name:<input type="text" name="last_name"></label><br>
+    <label for="email">Email:<input type="text" name="email"></label><br>
+    <label for="password">Password:<input type="password" name="password"></label><br>
+    <label for="passwordconf">Password Confirmation:<input type="password" name="passwordconf"></label><br>
+    <input type="submit" value="register">
+  </form>
+  <hr>
+  <h1>Login</h1>
+  <form action='/login' method='POST'>
+    <label for="username">Username: <input type="text" name="username"></label><br>
+    <label for="password">Password:<input type="password" name="password"></label><br>
+    <input type="submit" value="login">
+  </form>
+</body>
+</html>

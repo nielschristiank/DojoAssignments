@@ -18,7 +18,7 @@ def clickTwo():
 
 @app.route('/reset') #, methods=['GET'])
 def reset():
-    session.clear()
+    session.pop('counter')
     return redirect('/')
 
 

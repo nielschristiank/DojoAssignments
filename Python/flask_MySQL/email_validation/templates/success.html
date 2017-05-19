@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>EMAIL</title>
+</head>
+<body>
+  <h1>SUCCESS!</h1>
+  <h2>EMAIL LIST:</h2>
+  {% for email in all_emails %}
+    <p>{{email['email']}}</p>
+  {% endfor %}
+  <hr>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages %}
+    <p>{{message}}</p>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <a href="/">Back</a>
+  <form action="/delete_email" method='POST'>
+    Delete Email: <input type='text' name='delete_email' placeholder='Enter email address to delete...'>
+    <input type='submit' value='delete'>
+  </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Register for something!</title>
+</head>
+<body>
+  <h1>Login</h1>
+  {% with login_errors = get_flashed_messages(category_filter=['login_errors'])  %}
+  {% if login_errors %}
+  {% for message in login_errors %}
+    <small style="color: red">{{message}}</small><br>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <form action='/login' method='POST'>
+    <label for="username">Username: <input type="text" name="username"></label><br>
+    <label for="password">Password:<input type="password" name="password"></label><br>
+    <input type="submit" value="login">
+  </form>
+  <hr>
+  <h1>Register</h1>
+  {% with reg_errors = get_flashed_messages(category_filter=['reg_errors'])  %}
+  {% if reg_errors %}
+  {% for message in reg_errors %}
+    <small style="color: red">{{message}}</small><br>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <form action='/create_user' method='POST'>
+    <label for="username">Username: <input type="text" name="username"></label><br>
+    <label for="first_name">First Name:<input type="text" name="first_name"></label><br>
+    <label for="last_name">Last Name:<input type="text" name="last_name"></label><br>
+    <label for="email">Email:<input type="text" name="email"></label><br>
+    <label for="password">Password:<input type="password" name="password"></label><br>
+    <label for="passwordconf">Password Confirmation:<input type="password" name="passwordconf"></label><br>
+    <input type="submit" value="register">
+  </form>
+  <hr>
+</body>
+</html>
