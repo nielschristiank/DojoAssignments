@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'disappearingNinja/css/main.css' %}"
+    <title></title>
+  </head>
+  <body>
+    <h1 class="{{ninja_color}}">{{ninja_name}}</h1>
+    {% load staticfiles %}
+    <img src="{% static ninja_src %}">
+  </body>
+</html>

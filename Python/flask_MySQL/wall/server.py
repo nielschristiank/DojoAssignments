@@ -30,14 +30,16 @@ def wall():
 
 @app.route('/create_user', methods=['POST'])
 def create_user():
-    users = mysql.query_db("SELECT * FROM users")
+    # found_user_query = mysql.query_db("SELECT username FROM users WHERE users.username = :username")
+    # found_user_data = {'username':request.form['username']}
+    # found_user = mysql.query_db(found_user_query, found_user_data)
+    #
+    # found_email_query = mysql.query_db("SELECT email FROM users WHERE users.email = :email")
+    # found_email_data = {'email': request.form['email']}
+    # found_email = mysql.query_db(found_user_query, found_user_data)
 
     validated = True
 
-    for user in users:
-        if user['username'] == request.form['username']:
-            flash("Username already exists", 'reg_errors')
-            validated = False
     if not USERNAME_REGEX.match(request.form['username']):
         flash('Invalid Username: can only include a-z, A-Z, 0-9, _, or -','reg_errors')
         validated = False
@@ -57,25 +59,92 @@ def create_user():
         flash('passwords must match','reg_errors')
         validated = False
 
-    if validated == True:
-        salt = binascii.b2a_hex(os.urandom(15))
-        hashword = md5.new(request.form['password'] + salt).hexdigest()
-        query = "INSERT INTO users (username, first_name, last_name, email, password, salt, created_at, updated_at) VALUES (:u_name, :f_name, :l_name, :email, :password, :salt, NOW(), NOW())"
-        data = {'u_name': request.form['username'], 'f_name': request.form['first_name'], 'l_name': request.form['last_name'], 'email': request.form['email'], 'password': hashword, 'salt': salt}
-        mysql.query_db(query, data)
-        user_query = "SELECT * FROM users WHERE users.username = :u_name LIMIT 1"
-        user_data = {'u_name': request.form['username']}
-        user = mysql.query_db(user_query, user_data)
-        session['user'] = {
-        'id':user[0]['id'],
-        'username':user[0]['username'],
-        'first_name':user[0]['first_name'],
-        'last_name':user[0]['last_name'],
-        'email':user[0]['email']
-        }
-        return redirect('/wall')
+    if validated == False:
+        return redirect('/')
+    else:
+        found_user_query = "SELECT email, username FROM users WHERE users.email = :email OR users.username = :username"
+        found_user_data = {'email': request.form['email'], 'username':request.form['username']}
+        found_users = mysql.query_db(found_user_query, found_user_data)
+        for found_user in found_users:
+            if found_user['username'] == request.form['username']:
+                flash("Username already exists", 'reg_errors')
+                validated = False
+            if found_user['email'] == request.form['email']:
+                flash("Email already exists", 'reg_errors')
+                validated = False
+
+        if validated == False:
+            return redirect ('/')
+        else:
+            salt = binascii.b2a_hex(os.urandom(15))
+            hashword = md5.new(request.form['password'] + salt).hexdigest()
+            query = "INSERT INTO users (username, first_name, last_name, email, password, salt, created_at, updated_at) VALUES (:u_name, :f_name, :l_name, :email, :password, :salt, NOW(), NOW())"
+            data = {'u_name': request.form['username'], 'f_name': request.form['first_name'], 'l_name': request.form['last_name'], 'email': request.form['email'], 'password': hashword, 'salt': salt}
+            mysql.query_db(query, data)
+            user_query = "SELECT * FROM users WHERE users.username = :u_name LIMIT 1"
+            user_data = {'u_name': request.form['username']}
+            user = mysql.query_db(user_query, user_data)
+            session['user'] = {
+            'id':user[0]['id'],
+            'username':user[0]['username'],
+            'first_name':user[0]['first_name'],
+            'last_name':user[0]['last_name'],
+            'email':user[0]['email']
+            }
+            return redirect('/wall')
 
     return redirect('/')
+
+    # users = mysql.query_db("SELECT * FROM users")
+    #
+    # validated = True
+    #
+    # for user in users:
+    #     if user['username'] == request.form['username']:
+    #         flash("Username already exists", 'reg_errors')
+    #         validated = False
+    # if not USERNAME_REGEX.match(request.form['username']):
+    #     flash('Invalid Username: can only include a-z, A-Z, 0-9, _, or -','reg_errors')
+    #     validated = False
+    # if not NAME_REGEX.match(request.form['first_name']):
+    #     flash('First Name Invalid: must be minimum of 2 characters, and start with a capital letter','reg_errors')
+    #     validated = False
+    # if not NAME_REGEX.match(request.form['last_name']):
+    #     flash('Last Name Invalid: must be minimum of 2 characters, and start with a capital letter','reg_errors')
+    #     validated = False
+    # if not EMAIL_REGEX.match(request.form['email']):
+    #     flash('Email is Invalid','reg_errors')
+    #     validated = False
+    # for user in users:
+    #     if user['email'] == request.form['email']:
+    #         flash("Email already exists", 'reg_errors')
+    #         validated = False
+    # if not PW_REGEX.match(request.form['password']):
+    #     flash('password must be minimum of 8 characters','reg_errors')
+    #     validated = False
+    # if request.form['passwordconf'] != request.form['password']:
+    #     flash('passwords must match','reg_errors')
+    #         validated = False
+
+    # if validated == True:
+    #     salt = binascii.b2a_hex(os.urandom(15))
+    #     hashword = md5.new(request.form['password'] + salt).hexdigest()
+    #     query = "INSERT INTO users (username, first_name, last_name, email, password, salt, created_at, updated_at) VALUES (:u_name, :f_name, :l_name, :email, :password, :salt, NOW(), NOW())"
+    #     data = {'u_name': request.form['username'], 'f_name': request.form['first_name'], 'l_name': request.form['last_name'], 'email': request.form['email'], 'password': hashword, 'salt': salt}
+    #     mysql.query_db(query, data)
+    #     user_query = "SELECT * FROM users WHERE users.username = :u_name LIMIT 1"
+    #     user_data = {'u_name': request.form['username']}
+    #     user = mysql.query_db(user_query, user_data)
+    #     session['user'] = {
+    #     'id':user[0]['id'],
+    #     'username':user[0]['username'],
+    #     'first_name':user[0]['first_name'],
+    #     'last_name':user[0]['last_name'],
+    #     'email':user[0]['email']
+    #     }
+    #     return redirect('/wall')
+
+    # return redirect('/')
 
 @app.route('/login', methods=['POST'])
 def user_login():

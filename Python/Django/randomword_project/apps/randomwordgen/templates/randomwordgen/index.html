@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel='stylesheet' href="{% static 'randomwordgen/css/main.css' %}">
+    <title></title>
+  </head>
+  <body>
+      <h1>Random Word (attempt # {{request.session.counter}})</h1>
+      <div class="random_box">
+        <p>{{request.session.word}}
+      </div>
+      <form action="/genWord/" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="generate word">
+      </form>
+      <form action="/reset/" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="reset">
+      </form>
+  </body>
+</html>

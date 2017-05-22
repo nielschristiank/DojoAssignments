@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'ninjaGold/css/main.css' %}">
+    <title>Ninja Gold</title>
+  </head>
+  <body>
+    <div id="#wrapper">
+      <div id="header">
+        <h1> I AM NINJA! MAKE ME MONEY!</h1>
+        <img src="{% static 'ninjaGold/img/ninja.gif' %}" alt="NINJA IMG GOES HERE">
+      </div>
+      <div id="form_container">
+        <div id=gold_box><h3>Your Gold: </h3><h3>{{request.session.gold}}</h3></div>
+        <div class="align-right"><form action="/reset/" method='post'>{% csrf_token %}<input type='submit' value='start over'></form></div>
+        <div id="farm" class="building">
+          <h3>Farm</h3>
+          <p>(earns 10-20 gold)</p>
+          <form action="/process_money/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="farm" />
+            <input type="submit" value="Find Gold!"/>
+          </form>
+        </div>
+        <div id="cave" class="building">
+          <h3>Cave</h3>
+          <p>(earns 5-10 gold)</p>
+          <form action="/process_money/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="cave" />
+            <input type="submit" value="Find Gold!"/>
+          </form>
+        </div>
+        <div id="house" class="building">
+          <h3>House</h3>
+          <p>(earns 2-5 gold)</p>
+          <form action="/process_money/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="house" />
+            <input type="submit" value="Find Gold!"/>
+          </form>
+        </div>
+        <div id="casino" class="building">
+          <h3>Casino</h3>
+          <p>(earns/takes 0-50 gold)</p>
+          <form action="/process_money/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="casino" />
+            <input type="submit" value="Find Gold!"/>
+          </form>
+        </div>
+      <div id="activties_container">
+        <h2>Activities:</h2>
+        <div id="activities_output">
+          {% for activities in request.session.message %}
+            <p class="{{activities.0}}">{{activities.1}}</p>
+          {%  endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

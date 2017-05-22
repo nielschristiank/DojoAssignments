@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'surveyForm/css/main.css' %}">
+
+    <title></title>
+  </head>
+  <body>
+
+    <h1>Form</h1>
+    <form action="/process/" method="POST">
+      {% csrf_token %}
+      <label for="name">Name: <input type="text" name="name" placeholder="Enter name..."></label><br>
+      <label for="favDChero">
+        Favorite DC Hero:
+        <select name="favDChero">
+          <option value="Batman">Batman</option>
+            <option value="Definitely Batman">Definitely Batman</option>
+            <option value="It can only be Batman!">It can only be Batman!</option>
+          </select>
+        </label><br>
+        <label for="favMarvelhero">
+          Favorite Marvel Superhero:
+          <select name="favMarvelhero">
+            <option value="Spider-Man">Spider-Man</option>
+            <option value="Iron Man">Iron Man</option>
+            <option value="Captain America">Captain America</option>
+          </select>
+        </label><br>
+        <label for="comment">Comment: <br>
+          <textarea name="comment" rows="8" cols="20" placeholder="Enter comment"></textarea>
+        </label><br>
+        <label for="submit"><input type="submit" value="Submit"></label>
+      </form>
+
+  </body>
+</html>

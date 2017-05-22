@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Surprise! </title>
+  </head>
+  <body>
+    <h1> Surprise Words!</h1><a href="/"> Back</a>
+    <ul>
+    {% for word in request.session.words %}
+      <li>{{word}}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
