@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Course: {{course.name}}</title>
+  </head>
+  <body>
+    <h1>Course: {{course.name}}</h1>
+    <p>Description: {{course.description}}</p>
+    <form action="/post_comment/{{course.id}}" method="POST">
+    {% csrf_token %}
+    <textarea name="comment" rows="8" cols="40"></textarea>
+    <input type="submit" value="Enter Comment">
+  </form>
+  <ul>
+  {% for comment in course.comment_set.all %}
+    <li><small>{{comment.comment}}: {{comment.created_at}}</small></li>
+  {% endfor %}
+  </ul>
+  </body>
+</html>
