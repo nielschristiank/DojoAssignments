@@ -21,7 +21,7 @@ def randomWords(request):
     num = int(request.POST['num'])
     request.session['words'] = []
     while num > 0:
-        print "step 2"
+        # print "step 2"
         num -= 1;
         newWord = random.choice(WORDS)
         request.session['words'].append(newWord)

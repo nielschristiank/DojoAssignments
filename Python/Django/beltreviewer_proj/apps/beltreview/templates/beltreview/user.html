@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'beltreview/css/main.css' %}">
+    <title>User Page</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome : {{user.username}} </h1>
+      <!-- <div class="nav_top"> -->
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'show_add_book' %}">Add Book and Review</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+      <!-- </div> -->
+    </header>
+    <h1>User: {{ user.username }}</h1>
+    <h2>Name: {{ user.first_name }} {{ user.last_name }} </h1>
+    <h2>Email: {{ user.email }}</h2>
+    <h2>Total Reviews: {{reviews.count}}</h2>
+    <hr>
+    <h2> Books reviewed by: {{ user.username }}</h2>
+    {% for review in reviews %}
+      <p><a href="{% url 'show_book' id=review.book.id %}">{{review.book.title}}</a></p>
+      {% endfor %}
+  </body>
+</html>

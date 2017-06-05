@@ -16,9 +16,9 @@ def add_course(request):
     return redirect ('/')
 
 def delete(request, id):
-    print id
+    # print id
     course = Course.objects.get(id=id)
-    print course.name
+    # print course.name
     context = {
         'course': course
     }

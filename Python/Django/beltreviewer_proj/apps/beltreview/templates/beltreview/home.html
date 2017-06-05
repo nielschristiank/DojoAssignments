@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'beltreview/css/main.css' %}">
+    <title>Books Home</title>
+  </head>
+  <body>
+    <div id=#wrapper>
+      <header>
+        <h1>Welcome : {{user.username}} </h1>
+        <!-- <div class="nav_top"> -->
+          <ul>
+            <li><a href="{% url 'show_add_book' %}">Add Book and Review</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        <!-- </div> -->
+      </header>
+      <div id="main_container">
+        <div class="col_2">
+          <h1>Reviews:</h1>
+          <hr>
+          {% for review in reviews %}
+            <h4><a href="{% url 'show_book' id=review.book.id %}">{{review.book.title}}</a></h4>
+            <!-- <h5>Author Name: {{review.book.author.name}}</h5> -->
+            <p>Rating: <span class="stars">{{review.stars}}</span></p>
+            <p><a href="{% url 'show_user' id=review.user.id %}">{{review.user.username}}</a> says: {{review.content}}</p>
+            <small>{{review.created_at}}</small>
+            {% if user.id == review.user.id %}
+              <form action="{% url 'delete_review' id=review.id %}" method='POST'>
+                {% csrf_token %}
+                <input type="submit" value="delete review">
+              </form>
+            {% endif %}
+            <hr>
+          {% endfor %}
+        </div>
+        <div class="col_2 left">
+          <h1>Other Books with Reviews:</h1>
+          <div id="other_books" >
+            {% for book in books %}
+            <p><a href="{% url 'show_book' id=book.id %}">{{book.title}}</a></p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

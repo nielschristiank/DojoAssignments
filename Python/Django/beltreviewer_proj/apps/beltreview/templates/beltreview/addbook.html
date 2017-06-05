@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'beltreview/css/main.css' %}">
+    <title>Add Book and Review</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome : {{user.username}} </h1>
+      <!-- <div class="nav_top"> -->
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+      <!-- </div> -->
+    </header>
+    <hr>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <small><li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li></small>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <fieldset>
+      <legend>Add a Book and a Review!</legend>
+      <form action="{% url 'add_book' %}" method="post">
+        {% csrf_token %}
+        <label for="title">Book Title: <input type="text" name="title"></label><br>
+        Author: <br>
+        <label for="existing_author"><small>Choose an exising Author: </small><select name="existing_author">
+          <option value="">N/A</option>
+          {% for author in authors %}
+          <option value="{{author.id}}">{{author.name}}</option>
+          {% endfor %}
+        </select></label><br>
+        <label for="new_author"><small>Or add a new Author: </small><input type="text" name="new_author"></label><br>
+        <label for="review">Review: <br><textarea name="review" rows="8" cols="80"></textarea></label><br>
+        <label for="rating">Rating: <input type="number" name="rating" min="1" max="5"></label><br><br>
+        <input type="submit" value ="Submit Book and Review">
+      </form>
+    </fieldset>
+
+  </body>
+</html>

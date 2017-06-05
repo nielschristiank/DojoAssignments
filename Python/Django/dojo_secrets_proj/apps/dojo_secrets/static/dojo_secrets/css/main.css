@@ -1,0 +1,33 @@
+
+body {
+  font-family: Verdana, sans-serif;
+  background-color: lightblue;
+}
+
+
+fieldset {
+  width: 40%;
+  margin: 0 auto;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+fieldset#login, fieldset#register{
+  text-align: right;
+}
+
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
+
+#main_container {
+  text-align: center;
+}
+
+#wrapper {
+  width: 100%;
+  text-align: center;
+}
