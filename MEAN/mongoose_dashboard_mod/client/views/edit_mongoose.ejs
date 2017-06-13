@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Mongoose!</title>
+  </head>
+  <body>
+    <h1>Edit <%= mongoose.name%></h1>
+    <fieldset>
+      <legend>Add Mongoose</legend>
+        <form action="/mongooses/<%= mongoose._id%>" method="post">
+          <p><label>Name: <input type="text" name="name"></label></p>
+          <p><label>Personality: <input type="text" name="personality"></label></p>
+          <input type="submit" value-"Update a Mongoose!">
+        </form>
+    </fieldset>
+
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
+    <title></title>
+    <script>
+
+    $(document).ready(
+      function(){
+
+      $('button').click(
+        function(){
+          $.get("https://api.github.com/users/nielschristiank", displayName);
+        });
+
+      function displayName(data){
+        if(data.login){
+          console.log(data.login);
+          $('body').append("<p>"+data.login+"</p>");
+        }
+      }
+
+    });
+
+    </script>
+  </head>
+  <body>
+
+    <button> Get Git Name </button>
+
+  </body>
+
+</html>

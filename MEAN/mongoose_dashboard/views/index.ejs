@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Mongooses!</h1>
+    <% for (var i in mongooses) {%>
+      <p><a href="/mongooses/<%=mongooses[i]._id%>"><%= mongooses[i].name %></a>
+        <a href="/mongooses/edit/<%=mongooses[i]._id%>">Edit Mongoose</a>
+        <form action="/mongooses/delete/<%=mongooses[i]._id%>" method="post">
+          <input type="submit" value="delete">
+        </form>
+      </p>
+    <% } %>
+    <a href="/mongooses/new">Add a Mongoose!</a>
+  </body>
+</html>
